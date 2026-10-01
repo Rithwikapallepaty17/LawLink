@@ -1,0 +1,27 @@
+export default function SignUpPage() {
+  return (
+    <main>
+      <h1>Create an account</h1>
+
+      <form>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+        />
+
+        <button type="submit">
+          Sign up
+        </button>
+      </form>
+    </main>
+  );
+}

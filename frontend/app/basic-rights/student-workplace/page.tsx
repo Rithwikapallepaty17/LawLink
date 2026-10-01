@@ -1,0 +1,183 @@
+import Link from "next/link";
+
+const topics = [
+  {
+    number: "01",
+    title: "Fair Treatment",
+    description:
+      "Students and workers should be treated fairly and respectfully.",
+  },
+  {
+    number: "02",
+    title: "Safety",
+    description:
+      "People have protections relating to safety in educational and workplace environments.",
+  },
+  {
+    number: "03",
+    title: "Working Conditions",
+    description:
+      "Workers may have protections relating to wages, working hours, and working conditions.",
+  },
+  {
+    number: "04",
+    title: "Harassment",
+    description:
+      "People may have protections against harassment and other forms of unlawful treatment.",
+  },
+];
+
+export default function BasicStudentWorkplacePage() {
+  return (
+    <main className="min-h-screen bg-[#0b0b09] text-[#f0ede3]">
+
+      {/* Header */}
+      <header className="border-b border-[#37342c]">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 md:px-10">
+
+          <Link
+            href="/basic-rights"
+            className="text-xl font-bold tracking-[0.2em] text-[#c9a64a]"
+          >
+            § LAWLINK
+          </Link>
+
+          <Link
+            href="/basic-rights"
+            className="rounded-full border border-[#37342c] px-5 py-2 text-sm text-[#b7b2a6] transition hover:border-[#c9a64a] hover:text-[#c9a64a]"
+          >
+            ← Back
+          </Link>
+
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="mx-auto max-w-5xl px-6 py-16 md:px-10 md:py-20">
+
+        <p className="text-sm uppercase tracking-[0.3em] text-[#c9a64a]">
+          BASIC RIGHTS
+        </p>
+
+        <h1 className="mt-5 font-serif text-5xl leading-tight md:text-7xl">
+          Student &
+          <br />
+          <span className="text-[#c9a64a]">
+            Workplace Rights.
+          </span>
+        </h1>
+
+        <p className="mt-7 max-w-2xl text-lg leading-8 text-[#b7b2a6]">
+          A quick introduction to some basic rights and protections that
+          may apply to students and workers.
+        </p>
+
+      </section>
+
+      {/* Topics */}
+      <section className="mx-auto max-w-5xl px-6 pb-20 md:px-10">
+
+        <div className="grid gap-5 md:grid-cols-2">
+
+          {topics.map((topic) => (
+            <article
+              key={topic.number}
+              className="rounded-3xl border border-[#37342c] bg-[#191814] p-7 md:p-8"
+            >
+
+              <div className="flex items-center justify-between">
+
+                <span className="text-3xl text-[#c9a64a]">
+                  §
+                </span>
+
+                <span className="text-sm tracking-widest text-[#817d73]">
+                  {topic.number}
+                </span>
+
+              </div>
+
+              <h2 className="mt-8 font-serif text-3xl">
+                {topic.title}
+              </h2>
+
+              <p className="mt-4 leading-7 text-[#b7b2a6]">
+                {topic.description}
+              </p>
+
+            </article>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* Legal Learning Link */}
+      <section className="mx-auto max-w-5xl px-6 pb-20 md:px-10">
+
+        <div className="rounded-3xl border border-[#c9a64a] bg-[#211f19] p-8 md:p-10">
+
+          <p className="text-sm uppercase tracking-[0.3em] text-[#c9a64a]">
+            LEARN MORE
+          </p>
+
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl">
+            Explore detailed
+            <br />
+            <span className="text-[#c9a64a]">
+              Legal Learning.
+            </span>
+          </h2>
+
+          <p className="mt-5 max-w-2xl leading-7 text-[#b7b2a6]">
+            For detailed lessons and practical learning, continue to the
+            Student & Workplace Legal Learning section.
+          </p>
+
+          <Link
+            href="/learn/student-workplace"
+            className="mt-7 inline-block rounded-full bg-[#c9a64a] px-7 py-3 font-semibold text-[#0b0b09] transition hover:bg-[#d8b65a]"
+          >
+            Go to Legal Learning →
+          </Link>
+
+        </div>
+
+      </section>
+
+      {/* Disclaimer */}
+      <section className="border-t border-[#37342c]">
+
+        <div className="mx-auto max-w-5xl px-6 py-10 md:px-10">
+
+          <p className="text-xs leading-6 text-[#817d73]">
+            LawLink provides general legal information for educational and
+            awareness purposes. Laws and procedures can vary depending on
+            circumstances and jurisdiction. This information is not a
+            substitute for advice from a qualified legal professional.
+          </p>
+
+        </div>
+
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-[#37342c]">
+
+        <div className="mx-auto flex max-w-5xl justify-between px-6 py-8 md:px-10">
+
+          <span className="font-semibold tracking-[0.15em] text-[#c9a64a]">
+            § LAWLINK
+          </span>
+
+          <span className="text-sm text-[#817d73]">
+            Learn your rights. Understand your options.
+          </span>
+
+        </div>
+
+      </footer>
+
+    </main>
+  );
+}
